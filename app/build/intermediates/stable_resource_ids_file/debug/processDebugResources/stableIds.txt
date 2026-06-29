@@ -1,0 +1,3 @@
+com.olly.ollyzcalc:mipmap/ic_launcher_round = 0x7f010001
+com.olly.ollyzcalc:style/AppTheme = 0x7f020000
+com.olly.ollyzcalc:mipmap/ic_launcher = 0x7f010000

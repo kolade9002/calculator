@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="topbar">
+            <h1 class="brand">Calculator<span></span></h1>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab active" DATa-mode="basic">Basic</button>
+            <button class="tab" DATa-mode="scientific">Scientific</button>
+            <button class="tab" DATa-mode="matrix">Matrix</button>
+        </nav>
+
+        <!-- Shared display (Basic + Scientific) -->
+        <section class="display" id="display">
+            <div class="expr" id="expr">&nbsp;</div>
+            <div class="result" id="result">0</div>
+        </section>
+
+        <!-- ===================== BASIC ===================== -->
+        <section class="panel active" id="panel-basic">
+            <div class="keys keys-basic">
+                <button class="key fn" DATa-act="clear">C</button>
+                <button class="key fn" DATa-act="back">⌫</button>
+                <button class="key op" DATa-act="op" DATa-val="(">(</button>
+                <button class="key op" DATa-act="op" DATa-val=")">)</button>
+
+                <button class="key" DATa-act="num" DATa-val="7">7</button>
+                <button class="key" DATa-act="num" DATa-val="8">8</button>
+                <button class="key" DATa-act="num" DATa-val="9">9</button>
+                <button class="key op" DATa-act="op" DATa-val="/">÷</button>
+
+                <button class="key" DATa-act="num" DATa-val="4">4</button>
+                <button class="key" DATa-act="num" DATa-val="5">5</button>
+                <button class="key" DATa-act="num" DATa-val="6">6</button>
+                <button class="key op" DATa-act="op" DATa-val="*">×</button>
+
+                <button class="key" DATa-act="num" DATa-val="1">1</button>
+                <button class="key" DATa-act="num" DATa-val="2">2</button>
+                <button class="key" DATa-act="num" DATa-val="3">3</button>
+                <button class="key op" DATa-act="op" DATa-val="-">−</button>
+
+                <button class="key" DATa-act="num" DATa-val="0">0</button>
+                <button class="key" DATa-act="num" DATa-val=".">.</button>
+                <button class="key eq" DATa-act="equals">=</button>
+                <button class="key op" DATa-act="op" DATa-val="+">+</button>
+            </div>
+        </section>
+
+        <!-- ===================== SCIENTIFIC ===================== -->
+        <section class="panel" id="panel-scientific">
+            <div class="keys keys-sci">
+                <button class="key fn" DATa-act="angle" id="angleBtn">DEG</button>
+                <button class="key fn" DATa-act="clear">C</button>
+                <button class="key fn" DATa-act="back">⌫</button>
+                <button class="key eq" DATa-act="equals">=</button>
+
+                <button class="key sci" DATa-act="func" DATa-val="sin(">sin</button>
+                <button class="key sci" DATa-act="func" DATa-val="cos(">cos</button>
+                <button class="key sci" DATa-act="func" DATa-val="tan(">tan</button>
+                <button class="key op" DATa-act="op" DATa-val="/">÷</button>
+
+                <button class="key sci" DATa-act="func" DATa-val="sinh(">sinh</button>
+                <button class="key sci" DATa-act="func" DATa-val="cosh(">cosh</button>
+                <button class="key sci" DATa-act="func" DATa-val="tanh(">tanh</button>
+                <button class="key op" DATa-act="op" DATa-val="*">×</button>
+
+                <button class="key sci" DATa-act="func" DATa-val="sqrt(">√</button>
+                <button class="key sci" DATa-act="sq">x²</button>
+                <button class="key sci" DATa-act="op" DATa-val="^">xʸ</button>
+                <button class="key op" DATa-act="op" DATa-val="-">−</button>
+
+                <button class="key sci" DATa-act="func" DATa-val="log(">log</button>
+                <button class="key sci" DATa-act="func" DATa-val="ln(">ln</button>
+                <button class="key sci" DATa-act="const" DATa-val="pi">π</button>
+                <button class="key op" DATa-act="op" DATa-val="+">+</button>
+
+                <button class="key sci" DATa-act="const" DATa-val="e">e</button>
+                <button class="key op" DATa-act="op" DATa-val="(">(</button>
+                <button class="key op" DATa-act="op" DATa-val=")">)</button>
+                <button class="key sci" DATa-act="percent">%</button>
+
+                <button class="key" DATa-act="num" DATa-val="7">7</button>
+                <button class="key" DATa-act="num" DATa-val="8">8</button>
+                <button class="key" DATa-act="num" DATa-val="9">9</button>
+                <button class="key sci" DATa-act="negate">±</button>
+
+                <button class="key" DATa-act="num" DATa-val="4">4</button>
+                <button class="key" DATa-act="num" DATa-val="5">5</button>
+                <button class="key" DATa-act="num" DATa-val="6">6</button>
+                <button class="key" DATa-act="num" DATa-val="0">0</button>
+
+                <button class="key" DATa-act="num" DATa-val="1">1</button>
+                <button class="key" DATa-act="num" DATa-val="2">2</button>
+                <button class="key" DATa-act="num" DATa-val="3">3</button>
+                <button class="key" DATa-act="num" DATa-val=".">.</button>
+            </div>
+
+            <!-- Permutations & Combinations -->
+            <div class="subcard">
+                <h3>Permutations &amp; Combinations</h3>
+                <div class="row">
+                    <input type="number" id="npr_n" placeholder="n" inputmode="numeric">
+                    <input type="number" id="npr_r" placeholder="r" inputmode="numeric">
+                    <button class="key sci small" DATa-act="npr">nPr</button>
+                    <button class="key sci small" DATa-act="ncr">nCr</button>
+                </div>
+                <div class="subresult" id="combResult">—</div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="subcard">
+                <h3>Statistics <span class="hint">(population std dev)</span></h3>
+                <input type="text" id="statDATa" placeholder="comma-separated, e.g. 2, 4, 4, 6, 8">
+                <div class="row wrap">
+                    <button class="key sci small" DATa-act="stat" DATa-val="mean">Mean</button>
+                    <button class="key sci small" DATa-act="stat" DATa-val="median">Median</button>
+                    <button class="key sci small" DATa-act="stat" DATa-val="mode">Mode</button>
+                    <button class="key sci small" DATa-act="stat" DATa-val="stddev">Std Dev</button>
+                    <button class="key sci small" DATa-act="stat" DATa-val="sum">Sum</button>
+                </div>
+                <div class="subresult" id="statResult">—</div>
+            </div>
+        </section>
+
+        <!-- ===================== MATRIX ===================== -->
+        <section class="panel" id="panel-matrix">
+            <div class="subcard">
+                <div class="row">
+                    <label class="dimlabel"><input type="radio" name="dim" value="2" checked> 2×2</label>
+                    <label class="dimlabel"><input type="radio" name="dim" value="3"> 3×3</label>
+                </div>
+
+                <h3>Matrix A</h3>
+                <div class="matrix-grid" id="matrixA"></div>
+
+                <h3>Matrix B</h3>
+                <div class="matrix-grid" id="matrixB"></div>
+
+                <div class="row wrap matrix-ops">
+                    <button class="key sci small" DATa-act="mat" DATa-val="add">A + B</button>
+                    <button class="key sci small" DATa-act="mat" DATa-val="sub">A − B</button>
+                    <button class="key sci small" DATa-act="mat" DATa-val="mul">A × B</button>
+                    <button class="key sci small" DATa-act="mat" DATa-val="det">det(A)</button>
+                    <button class="key sci small" DATa-act="mat" DATa-val="inv">inverse(A)</button>
+                    <button class="key sci small" DATa-act="mat" DATa-val="trans">transpose(A)</button>
+                </div>
+
+                <div class="subresult" id="matResult">—</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
